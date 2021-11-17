@@ -3,6 +3,7 @@ tasks:
   - command: sudo /etc/init.d/postgresql start
   - command: export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt
   - command: sude ... PGDATABASE=dbt DBT_PROFILES_DIR='.'
+  - command: cd dbt-greenery
 ports:
   - port: 8000
     onOpen: open-preview
