@@ -8,5 +8,5 @@ greenery:
       password: corise
       port: 5432
       database: dbt
-      schema: dbt_stefano
+      schema: public
       threads: 4
