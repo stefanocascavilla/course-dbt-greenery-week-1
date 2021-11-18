@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: Table containing information about the users (got from users source table) 
+    columns:
+      - name: user_id
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at
+      - name: updated_at
+      - name: address_id
+  - name: stg_addresses
+    description: Table containing the addresses information (got from addresses source table)
+    columns:
+      - name: address_id
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country
+  - name: stg_events
+    description: Table containing the events performed by users on the platform (got from events source table)
+    columns:
+      - name: event_id
+      - name: session_id
+      - name: user_id
+      - name: page_url
+      - name: created_at
+      - name: event_type
+  - name: stg_orders
+    description: Table containing orders made by the users (got from orders source table)
+    columns:
+      - name: order_id
+      - name: user_id
+      - name: promo_id
+      - name: address_id
+      - name: created_at
+      - name: order_cost
+      - name: shipping_cost
+      - name: order_total
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at
+      - name: status
+  - name: stg_order_items
+    description: Relation table that associate products to the orders made (got from the order_items source table)
+    columns:
+      - name: order_id
+      - name: product_id
+      - name: quantity
+  - name: stg_products
+    description: Table containing the information about the products (got from the products source table)
+    columns:
+      - name: product_id
+      - name: name
+      - name: price
+      - name: quantity
+  - name: stg_promos
+    description: Table containing the information about the promos (got from the promos source table)
+    columns:
+      - name: promo_id
+      - name: discout
+      - name: status
+
+  # These two stg tables have been created to simplify the queries used to answers the 5 questions
+  - name: stg_aggregated_hour_orders
+    description: Table containing the number of orders placed aggregated by hour
+    columns:
+      - name: created_hour
+      - name: orders_number
+  - name: stg_aggregated_hour_unique_sessions
+    description: Table containing the number of unique sessions aggregated by hour
+    columns:
+      - name: created_hour
+      - name: unique_sessions_number

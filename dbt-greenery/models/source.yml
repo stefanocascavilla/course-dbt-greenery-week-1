@@ -10,7 +10,7 @@ sources:
         description: The information about the users
         loaded_at_field: created_at
       - name: addresses
-        description: The address information
+        description: The addresses information
       - name: events
         description: Events performed by users on the platform
         loaded_at_field: created_at

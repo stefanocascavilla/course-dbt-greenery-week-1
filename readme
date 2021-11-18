@@ -26,3 +26,9 @@ Answers to the Week-1 Project
 5)
     Answer: 7,38
     Query: select avg(unique_sessions_number) from public.stg_aggregated_hour_unique_sessions;
+
+
+
+Self Answers to Week-1 Project
+
+1) 
