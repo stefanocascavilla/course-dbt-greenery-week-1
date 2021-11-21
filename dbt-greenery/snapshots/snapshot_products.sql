@@ -4,8 +4,8 @@
         config(
             target_schema='snapshots',
             unique_key='product_id',
-            strategy='timestamp',
-            updated_at='quantity'
+            strategy='check',
+            check_cols=['quantity']
         )
     }}
 
